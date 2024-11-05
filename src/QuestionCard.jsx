@@ -1,18 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function QuestionCard({ question, answer }) {
-  const [isExpanded, setIsExpanded] = useState(false);
-
-  // Funkcija za prebacivanje stanja
-  const toggleAnswer = () => {
-    setIsExpanded(!isExpanded);
-  };
-
+function QuestionCard({ question, answer, isExpanded, onToggle }) {
   return (
     <div className="question-card">
       <div className="question-header">
         <h3>{question}</h3>
-        <button onClick={toggleAnswer} className="toggle-button">
+        <button onClick={onToggle} className="toggle-button">
           {isExpanded ? '-' : '+'}
         </button>
       </div>
